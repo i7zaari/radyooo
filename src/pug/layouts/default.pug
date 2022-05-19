@@ -1,0 +1,98 @@
+block variables
+    -
+        var title = "راديووو"
+        var description = "استمع إلى أشهر الإذاعات العالمية عبر الانترنت في مكان واحد"
+        var keywords = ["الإذاعة", "القرآن الكريم"]
+        var url = "https://i7zaari.github.io/radyooo/"
+        var image = "https://raw.githubusercontent.com/i7zaari/radyooo/master/src/images/etc/preview.jpg"
+
+doctype
+html(lang="ar" dir="rtl")
+    head
+        meta(
+            charset="UTF-8"
+        )
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        )
+        meta(
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#ffffff"
+        )
+        meta(
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#1a1a1a"
+        )
+        link(
+            rel="icon"
+            href="/src/images/favicons/inactive.svg"
+        )
+        link(
+            rel="stylesheet"
+            href="/src/sass/style.sass"
+        )
+        link(
+            rel="canonical"
+            href=url
+        )
+        title !{title}
+        meta(
+            name="description"
+            content=description
+        )
+        meta(
+            name="keywords"
+            content=keywords.join(", ")
+        )
+        meta(
+            name="author"
+            content="حمزة الزعري"
+        )
+        meta(
+            property="og:url"
+            content=url
+        )
+        meta(
+            property="og:type"
+            content="website"
+        )
+        meta(
+            property="og:image"
+            content=image
+        )
+        meta(
+            property="og:title"
+            content=title
+        )
+        meta(
+            property="og:description"
+            content=description
+        )
+        meta(
+            name="twitter:url"
+            content=url
+        )
+        meta(
+            name="twitter:card"
+            content="summary_large_image"
+        )
+        meta(
+            name="twitter:image"
+            content=image
+        )
+        meta(
+            name="twitter:title"
+            content=title
+        )
+        meta(
+            name="twitter:description"
+            content=description
+        )
+    body
+        block header
+        block main
+        block footer
+        block scripts

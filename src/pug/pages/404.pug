@@ -1,0 +1,15 @@
+extends /pug/layouts/default
+
+append variables
+    -
+        title = "الصفحة غير موجودة &bull; راديووو"
+        url += "404.html"
+
+block main
+    main#page-not-found
+        .container
+            h1 لا يمكن العثور على الصفحة التي تبحث عنها
+            a(
+                class="button"
+                href="/radyooo"
+            ) الصفحة الرئيسية

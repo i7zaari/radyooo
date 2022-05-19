@@ -1,0 +1,19 @@
+@use "../helpers" as *
+
+footer
+    padding: 48px 0
+    margin-top: 48px
+    border-top: 2px solid var(--secondary-background)
+    .container
+        display: flex
+        justify-content: center
+        span
+            display: inline-flex
+            flex-direction: row-reverse
+            vertical-align: sub
+            +max(375)
+                display: none
+            svg
+                height: 1rem
+                width: 1rem
+                margin-right: 8px

@@ -1,0 +1,87 @@
+@use "../helpers" as *
+
+#home
+    #hero
+        height: 50vh
+        .container
+            height: inherit
+            display: flex
+            align-items: center
+            justify-content: center
+    #stations
+        ul
+            display: grid
+            gap: 24px
+            +min($md)
+                grid-template-columns: repeat(2, 1fr)
+            +min($xl)
+                grid-template-columns: repeat(3, 1fr)
+            +min($xxl)
+                grid-template-columns: repeat(4, 1fr)
+            li
+                min-height: 300px
+                background-color: var(--secondary-background)
+                border-radius: 8px
+                +transition(opacity)
+                &.not-found
+                    opacity: 25%
+                    pointer-events: none
+                    order: 9999999
+                a
+                    min-height: inherit
+                    color: var(--primary-text)
+                    border-radius: inherit
+                    overflow: hidden
+                    position: relative
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    +transition(filter)
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 16px
+                        top: 16px
+                        height: 16px
+                        width: 16px
+                        border-radius: 50%
+                        +transition(background-color)
+                    &.waiting::before
+                        border: 2px solid var(--primary-text)
+                        border-bottom-color: transparent
+                        +animation(spin, $iteration-count: infinite)
+                    &.error
+                        pointer-events: none
+                        filter: grayscale(100%)
+                    &.playing::before
+                        background-color: red
+                        +animation(flash, 2000, $iteration-count: infinite)
+                    &::after
+                        content: ""
+                        background-image: linear-gradient(transparent, var(--primary-background) 180%)
+                        position: absolute
+                        bottom: -25%
+                        height: 25%
+                        width: 100%
+                        +transition(bottom)
+                    img
+                        height: 100px
+                        +transition(transform)
+                    h2
+                        width: 100%
+                        text-align: center
+                        position: absolute
+                        bottom: 8px
+                        left: 50%
+                        transform: translateX(-50%)
+                        opacity: 0
+                        z-index: 1
+                        +transition((bottom, opacity))
+                    &:hover
+                        &::after
+                            bottom: 0
+                        img
+                            transform: translateY(-16px)
+                        h2
+                            bottom: 16px
+                            opacity: 1

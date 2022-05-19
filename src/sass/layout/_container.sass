@@ -1,0 +1,15 @@
+@use "sass:math" as *
+@use "../helpers" as *
+
+.container
+    padding:
+        right: 24px
+        left: 24px
+    margin:
+        right: auto
+        left: auto
+    +min($xs)
+        width: 100%
+    @each $breakpoint in [$sm, $md, $lg, $xl, $xxl]
+        +min($breakpoint)
+            width: ($breakpoint - div($breakpoint, 16)) + px
