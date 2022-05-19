@@ -1,0 +1,54 @@
+extends /pug/layouts/default
+
+block header
+    include /pug/includes/common/noscript
+    include /pug/includes/common/header
+
+block main
+    main#home
+        section#hero
+            .container
+                div
+                    h1 استمع إلى أشهر الإذاعات العالمية عبر الانترنت في مكان واحد
+                    form
+                        input(
+                            type="search"
+                            id="searchbox"
+                            placeholder="ابحث..."
+                            spellcheck="false"
+                            aria-label="البحث عن إذاعة"
+                        )
+        section#stations
+            .container
+                ul
+                    include /pug/includes/data/stations
+                    each station in stations
+                        if station.id !== ""
+                            li
+                                a(
+                                    href=`#${station.id}`
+                                )
+                                    figure
+                                        img(
+                                            src=`/src/images/stations/${station.id}.png`
+                                            alt=`إذاعة ${station.name}`
+                                            loading="lazy"
+                                            draggable="false"
+                                        )
+                                        audio(
+                                            src=station.url
+                                            preload="none"
+                                        )
+                                        figcaption
+                                            h2 #{`إذاعة ${station.name}`}
+                        else
+                            li(aria-hidden="true")
+
+block footer
+    include /pug/includes/common/footer
+
+block scripts
+    script(
+        src="/src/javascript/main.js"
+        type="module"
+    )

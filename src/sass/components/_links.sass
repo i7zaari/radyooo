@@ -1,0 +1,15 @@
+@use "../helpers" as *
+
+a
+    &[class="logo"]
+        color: var(--primary-text)
+        display: inline-flex
+        border-radius: 50%
+    &[rel="license"]
+        color: var(--secondary-text)
+        line-height: 1
+        padding: 4px
+        border-radius: 8px
+        +transition(color)
+        &:hover
+            color: var(--primary-text)

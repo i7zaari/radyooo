@@ -1,0 +1,57 @@
+{
+    "name": "radyooo",
+    "version": "1.0.0",
+    "description": "Listen to the most popular radio stations in the world online in one place",
+    "homepage": "https://i7zaari.github.io/radyooo",
+    "bugs": "https://github.com/i7zaari/radyooo/issues",
+    "license": "CC-BY-NC-SA-4.0",
+    "author": {
+        "name": "Hamza Zaari",
+        "email": "i7zaari@yandex.com",
+        "url": "https://i7zaari.github.io/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/i7zaari/radyooo.git"
+    },
+    "source": [
+        "./src/pug/pages/index.pug",
+        "./src/pug/pages/404.pug"
+    ],
+    "parcel-namer-struct": [{
+            "type": [
+                "jpg",
+                "png",
+                "svg"
+            ],
+            "dest": "images"
+        },
+        {
+            "type": [
+                "woff2",
+                "woff",
+                "ttf"
+            ],
+            "dest": "fonts"
+        },
+        {
+            "type": "css",
+            "dest": "css"
+        },
+        {
+            "type": "js",
+            "dest": "javascript"
+        }
+    ],
+    "scripts": {
+        "dev": "./scripts/dev.sh",
+        "build": "./scripts/build.sh"
+    },
+    "devDependencies": {
+        "@parcel/resolver-glob": "^2.5.0",
+        "@parcel/transformer-pug": "^2.5.0",
+        "@parcel/transformer-sass": "^2.5.0",
+        "parcel": "^2.5.0",
+        "parcel-namer-struct": "^1.0.0"
+    }
+}

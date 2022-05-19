@@ -1,0 +1,8 @@
+@each $weight in [400, 500]
+    @font-face
+        font:
+            family: "Tajawal"
+            weight: $weight
+            style: normal
+            display: fallback
+        src: url("/src/fonts/tajawal-#{$weight}.woff2") format("woff2"), url("/src/fonts/tajawal-#{$weight}.woff") format("woff"), url("/src/fonts/tajawal-#{$weight}.ttf") format("truetype")

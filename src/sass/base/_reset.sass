@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+body
+    -webkit-tap-highlight-color: transparent
+
+strong
+    font-weight: 500
+
+a
+    text-decoration: none
+
+input
+    font:
+        family: inherit
+        size: inherit
+    color: inherit
+    &[type="search"]::-webkit-search
+        &-decoration,
+        &-cancel-button,
+        &-results-button,
+        &-results-decoration
+            display: none
+
+ul
+    li
+        list-style: none

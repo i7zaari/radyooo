@@ -1,0 +1,7 @@
+=animation($name, $duration: 500, $timing-function: linear, $iteration-count: initial)
+    animation:
+        name: $name
+        duration: $duration + ms
+        timing-function: $timing-function
+        @if $iteration-count != initial
+            iteration-count: $iteration-count

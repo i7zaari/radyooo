@@ -1,0 +1,9 @@
+=min($breakpoints...)
+    @each $breakpoint in $breakpoints
+        @media (min-width: $breakpoint + px)
+            @content
+
+=max($breakpoints...)
+    @each $breakpoint in $breakpoints
+        @media (max-width: ($breakpoint - 0.02) + px)
+            @content

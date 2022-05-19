@@ -1,0 +1,12 @@
+@use "../helpers" as *
+
+input
+    width: 100%
+    border: none
+    border-radius: 8px
+    background-color: var(--secondary-background)
+    padding: 16px
+    &::placeholder
+        +transition(opacity)
+    &:focus::placeholder
+        opacity: 0
